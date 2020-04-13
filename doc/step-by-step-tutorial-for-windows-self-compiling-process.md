@@ -12,7 +12,7 @@ https://github.com/PIVX-Project/PIVX/issues
 
 ## Let's start...
 
-## COMPILING THE WALLET FOR THE FIRST TIME
+## COMPILING THE WALLET FOR THE FIRST TIME:
 
 1. Press Windows button on keyboard, search for **Windows PowerShell** and start it. Type the following command:
 ```
@@ -84,14 +84,14 @@ sudo make install DESTDIR=/mnt/c/workspace/PIVX
 **That's it, play around with the latest version of PIVX Core Wallet directly compiled from master branch!**
 
 ---------------------------------------------
-## COMPILING WHEN YOU ALREADY HAVE THE WALLET
+## COMPILING IF YOU EARLIER ALREADY COMPILED WALLET THIS WAY:
 
 ```
 rm -rf PIVX
 sudo dpkg --configure -a
 sudo apt-get update && sudo apt-get upgrade -y
+git clone https://github.com/pivx-project/pivx.git PIVX
 cd PIVX
-git pull origin master
 ./autogen.sh && CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
 make -j2
 cmd.exe /C start "C:\Users\YOUR_WINDOWS_USERNAME\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\YOUR_WSL_USERNAME\PIVX\src\qt\pivx-qt.exe" --testnet
