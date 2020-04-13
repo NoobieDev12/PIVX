@@ -87,10 +87,12 @@ sudo make install DESTDIR=/mnt/c/workspace/PIVX
 ## COMPILING WHEN YOU ALREADY HAVE THE WALLET
 
 ```
+rm -rf PIVX
 sudo dpkg --configure -a
 sudo apt-get update && sudo apt-get upgrade -y
 cd PIVX
 git pull origin master
+./autogen.sh && CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
 make -j2
 cmd.exe /C start "C:\Users\YOUR_WINDOWS_USERNAME\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\YOUR_WSL_USERNAME\PIVX\src\qt\pivx-qt.exe" --testnet
 ```
