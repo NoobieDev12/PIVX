@@ -66,6 +66,7 @@ make -j$(nproc)
 cmd.exe /C start "C:\Users\YOUR_WINDOWS_USERNAME\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\YOUR_WSL_USERNAME\PIVX\src\qt\pivx-qt.exe" --testnet
 ```
 **IMPORTANT NOTE:** From last command, don't forget again to replace `YOUR_WINDOWS_USERNAME` with your Windows User name, and `YOUR_WSL_USERNAME` with username you used in Step 3 earlier.
+However, for some reason, last command is not working for some users and returning `cmd.exe command not found`. If that is the case, it's not a problem, just proceed with the **Optional step** below.
 
 
 **Optional step:**
@@ -74,6 +75,12 @@ After you successfully compile the wallet, you can copy-paste the compiled .exe 
 ```
 sudo make install DESTDIR=/mnt/c/workspace/PIVX
 ```
+This will create an executable files in Local Disk (C:) -> workspace -> PIVX folder.
+To start the wallet open PIVX -> bin -> pivx-qt.exe
+
+**NOTE:** This will start the wallet on **mainnet**, but you want it in **testnet**! So, you should go to Local Disk (C:) -> Users ->  YOUR_USERNAME -> AppData -> Roaming -> PIVX -> edit pivx.conf and add in it exactly:
+`testnet=1`
+Save it, close it and you can start the wallet again. It will be running on testnet now.
 
 --------------------------------------------
 **Congratulations, you have successfully compiled and started PIVX Qt Core Wallet!**
@@ -87,6 +94,9 @@ In Terminal type:
 
 ```
 rm -rf PIVX
+
+
+ALSO, FROM LOCAL DISK (C:) -> workspace -> DELETE ENTIRE "PIVX" FOLDER.
 
 GO BACK TO STEP 4. AND FOLLOW THE STEPS FROM THERE.
 ```
