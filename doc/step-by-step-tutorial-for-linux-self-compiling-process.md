@@ -13,7 +13,7 @@ https://github.com/PIVX-Project/PIVX/issues
 
 ## Let's start...
 
-## COMPILING THE WALLET FOR THE FIRST TIME
+## COMPILING THE WALLET FOR THE FIRST TIME:
 
 Open the terminal (command line) on Ubuntu 18.04. Type in the commands line by line as following:
 
@@ -21,7 +21,7 @@ Open the terminal (command line) on Ubuntu 18.04. Type in the commands line by l
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install build-essential libtool bsdmainutils autotools-dev autoconf pkg-config automake python3 -y
 sudo apt-get install libssl-dev libgmp-dev libevent-dev libboost-all-dev software-properties-common -y
-sudo add-apt-repository ppa:pivx/pivx
+sudo add-apt-repository -y ppa:pivx/pivx
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install libdb4.8-dev libdb4.8++-dev libminiupnpc-dev libzmq3-dev -y
 sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 libqt5svg5-dev libqt5charts5-dev qttools5-dev -y
@@ -29,13 +29,10 @@ sudo apt-get install qttools5-dev-tools libprotobuf-dev protobuf-compiler libqre
 git clone https://github.com/pivx-project/pivx.git PIVX
 cd PIVX
 ./autogen.sh && ./configure
-make -j1
+make -j$(nproc)
 ./src/qt/pivx-qt --testnet &
 ```
 --------------------------------------------
-**Extra information:**
-
-You can replace the number 1 in `make -j1` line with the number of threads you want to use while compiling, but have in mind that it needs to be less than the amount of processors, otherwise it will slow down the process.
 
 **Congratulations, you have successfully compiled and started PIVX Qt Core Wallet!**
 
@@ -44,19 +41,17 @@ You can replace the number 1 in `make -j1` line with the number of threads you w
 **NOTE:** If you are testing the wallet through terminal (command line) only, to start the wallet use the `./src/qt/pivxd --testnet` command instead of the last line (`./src/qt/pivx-qt --testnet &`).
 
 ---------------------------------------------
-## COMPILING WHEN YOU ALREADY HAVE THE WALLET
+
+## COMPILING WHEN YOU HAVE ALREADY COMPILED THE WALLET THIS WAY:
 
 Go inside PIVX directory:
 ```
 cd PIVX
 git pull origin master
-make -j1
+make -j$(nproc)
 ./src/qt/pivx-qt --testnet &
 ```
-
-**Extra information:**
-
-You can replace the number 1 in `make -j1` line with the number of threads you want to use while compiling, but have in mind that it needs to be less than the amount of processors, otherwise it will slow down the process.
+---------------------------------------------
 
 #### **Congratulations, you have successfully compiled and started FRESH PIVX Qt Core Wallet!**
 
