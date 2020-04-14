@@ -24,7 +24,6 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q)
 
 3. Setup your username and password and write it down somewhere, you will need it later.
-**NOTE:** In step 4, after typing `sudo add-apt-repository ppa:pivx/pivx` command, you will have to press **ENTER** on keyboard.
 
 4. Run these commands line by line:
 ```
