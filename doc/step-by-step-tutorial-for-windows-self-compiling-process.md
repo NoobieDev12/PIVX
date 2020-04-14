@@ -69,7 +69,7 @@ cmd.exe /C start "C:\Users\YOUR_WINDOWS_USERNAME\AppData\Local\Packages\Canonica
 However, for some reason, last command is not working for some users and returning `cmd.exe command not found`. If that is the case, it's not a problem, just proceed with the **Optional step** below.
 
 
-**Optional step:**
+**8. Optional step:**
 After you successfully compile the wallet, you can copy-paste the compiled .exe file to a "fast reachable" folder on your Local Disc, by using the following command after `make -j$(nproc)`:
 
 ```
@@ -95,8 +95,8 @@ In Terminal type:
 ```
 rm -rf PIVX
 
+ALSO, FROM Local Disk (C:) -> workspace -> Delete entire "PIVX" folder (if it is there: it is being created in step 8).
 
-ALSO, FROM LOCAL DISK (C:) -> workspace -> DELETE ENTIRE "PIVX" FOLDER.
 
 GO BACK TO STEP 4. AND FOLLOW THE STEPS FROM THERE.
 ```
