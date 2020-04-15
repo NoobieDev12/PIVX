@@ -102,7 +102,7 @@ In Terminal type:
 ```
 rm -rf PIVX
 
-ALSO, FROM Local Disk (C:) -> workspace -> Delete entire "PIVX" folder
+Also, from Local Disk (C:) -> workspace -> Delete entire "PIVX" folder
 (it is there if you did "2) starting by opening pivx-qt.exe file" while you were compiling for the first time).
 
 
