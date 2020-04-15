@@ -63,13 +63,21 @@ cd ~/PIVX/
 ```
 ./autogen.sh && CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
 make -j$(nproc)
+```
+**NOTE:** You have successfully compiled the wallet! But...you are now one step away from starting the wallet.
+There are 2 ways of starting the wallet:
+1) starting directly from command line
+2) starting by opening pivx-qt.exe file
+
+**1) starting directly from command line:**
+I'll go with the first option now, but for some users, command isn't working and returning `cmd.exe command not found`, but not a problem since option 2 will surely work in worst case. Run the following command:
+```
 cmd.exe /C start "C:\Users\YOUR_WINDOWS_USERNAME\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\YOUR_WSL_USERNAME\PIVX\src\qt\pivx-qt.exe" --testnet
 ```
-**IMPORTANT NOTE:** From last command, don't forget again to replace `YOUR_WINDOWS_USERNAME` with your Windows User name, and `YOUR_WSL_USERNAME` with username you used in Step 3 earlier.
-However, for some reason, last command is not working for some users and returning `cmd.exe command not found`. If that is the case, it's not a problem, just proceed with the **Optional step** below.
+**IMPORTANT NOTE:** Don't forget again to replace `YOUR_WINDOWS_USERNAME` with your Windows User name, and `YOUR_WSL_USERNAME` with username you used in Step 3 earlier.
 
 
-**8. Optional step:**
+**2) starting by opening pivx-qt.exe file:**
 After you successfully compile the wallet, you can copy-paste the compiled .exe file to a "fast reachable" folder on your Local Disc, by using the following command after `make -j$(nproc)`:
 
 ```
@@ -79,8 +87,7 @@ This will create an executable files in Local Disk (C:) -> workspace -> PIVX fol
 To start the wallet open PIVX -> bin -> pivx-qt.exe
 
 **NOTE:** This will start the wallet on **mainnet**, but you want it in **testnet**! So, you should go to Local Disk (C:) -> Users ->  YOUR_USERNAME -> AppData -> Roaming -> PIVX -> edit pivx.conf and add in it exactly:
-`testnet=1`
-Save it, close it and you can start the wallet again. It will be running on testnet now.
+`testnet=1`. Save it, close it and you can start the wallet again. It will be running on testnet now.
 
 --------------------------------------------
 **Congratulations, you have successfully compiled and started PIVX Qt Core Wallet!**
