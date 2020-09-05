@@ -35,7 +35,7 @@ sudo add-apt-repository -y ppa:pivx/pivx
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install libdb4.8-dev libdb4.8++-dev libminiupnpc-dev libzmq3-dev libcurl4-openssl-dev -y
 sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 libqt5svg5-dev libqt5charts5-dev qttools5-dev -y
-sudo apt-get install qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev -y
+sudo apt-get install qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev libsodium-dev cargo -y
 sudo apt-get update && sudo apt-get upgrade -y
 git clone https://github.com/pivx-project/pivx.git PIVX
 cd PIVX
