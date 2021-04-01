@@ -61,7 +61,7 @@ cd ~/PIVX/
 
 7. Run the following commands line by line:
 ```
-./autogen.sh && CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
+./autogen.sh && CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/ --disable-online-rust
 make -j$(nproc)
 ```
 **NOTE:** You have successfully compiled the wallet! But...you are now one step away from starting the wallet.
